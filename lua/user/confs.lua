@@ -1,0 +1,6 @@
+require "user.conf.nvim_tree"
+require "user.conf.nvim_comment"
+require "user.conf.nvim_autopairs"
+require "user.conf.nvim_treesitter"
+require "user.conf.toggleterm"
+require "user.conf.neoformat"

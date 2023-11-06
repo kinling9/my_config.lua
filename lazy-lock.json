@@ -1,0 +1,15 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
+  "neoformat": { "branch": "master", "commit": "51f0eef4c47f4a677ce6272c103d4ac74acb3b8f" },
+  "nvim-autopairs": { "branch": "master", "commit": "0f04d78619cce9a5af4f355968040f7d675854a1" },
+  "nvim-comment": { "branch": "main", "commit": "e9ac16ab056695cad6461173693069ec070d2b23" },
+  "nvim-lspconfig": { "branch": "master", "commit": "37457f268af5cd6765e589b0dcd7cbd192d8da00" },
+  "nvim-tree.lua": { "branch": "master", "commit": "c763861afb32f839555f9e797f4392f54ef4ad23" },
+  "nvim-treesitter": { "branch": "master", "commit": "96f55f304332ca6ea1b7dde32d3ec04b5298c316" },
+  "onedark.nvim": { "branch": "master", "commit": "b9acd92ded2ba155867ca5af9d618e933d96e3b0" },
+  "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
+  "telescope.nvim": { "branch": "master", "commit": "20bf20500c95208c3ac0ef07245065bf94dcab15" },
+  "toggleterm.nvim": { "branch": "main", "commit": "c80844fd52ba76f48fabf83e2b9f9b93273f418d" },
+  "vim-easymotion": { "branch": "master", "commit": "b3cfab2a6302b3b39f53d9fd2cd997e1127d7878" },
+  "vim-gitgutter": { "branch": "main", "commit": "f7b97666ae36c7b3f262f3190dbcd7033845d985" }
+}
