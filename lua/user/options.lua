@@ -35,14 +35,6 @@ vim.cmd "set whichwrap+=<,>,[,],h,l"
 -- 	colorscheme onedark
 -- ]])
 
-vim.cmd([[
-	augroup set-commentstring-ag
-	autocmd!
-	autocmd BufEnter *.cc,*.cpp,*.h,*.hh,*.hpp :lua vim.api.nvim_buf_set_option(0, "commentstring", "// %s")
-	autocmd BufFilePost *.cc,*.cpp,*.h,*.hh,*.hpp :lua vim.api.nvim_buf_set_option(0, "commentstring", "// %s")
-	augroup END
-]])
-
 if vim.fn.has "wsl" == 1 then
   vim.g.clipboard = {
     copy = {

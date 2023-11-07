@@ -23,5 +23,9 @@ vim.cmd [[
 		\ 'stdin': 1,
 	  \ }
 
-	let g:neoformat_enabled_cpp = ['clangfile']
+	let g:neoformat_enabled_cpp = ['clanggoogle']
+]]
+
+vim.cmd [[
+	let g:neoformat_enabled_python = ['black']
 ]]

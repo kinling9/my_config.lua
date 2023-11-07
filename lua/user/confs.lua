@@ -4,3 +4,8 @@ require "user.conf.nvim_autopairs"
 require "user.conf.nvim_treesitter"
 require "user.conf.toggleterm"
 require "user.conf.neoformat"
+require 'user.conf.nvim_cmp'
+require 'user.conf.gitsigns'
+require 'user.conf.neogit'
+require 'user.conf.nvim_treesitter'
+require 'user.conf.mini'
