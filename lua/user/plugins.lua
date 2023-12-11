@@ -34,4 +34,10 @@ require("lazy").setup(	{
 "hrsh7th/cmp-vsnip",
 "hrsh7th/vim-vsnip",
 "echasnovski/mini.nvim",
+{
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+},
 })

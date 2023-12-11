@@ -6,6 +6,7 @@
   "cmp-vsnip": { "branch": "main", "commit": "989a8a73c44e926199bfd05fa7a516d51f2d2752" },
   "gitsigns.nvim": { "branch": "main", "commit": "af0f583cd35286dd6f0e3ed52622728703237e50" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
+  "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
   "mini.nvim": { "branch": "main", "commit": "36940b8f18e2557c1c47b1333618e31d8828c30c" },
   "neoformat": { "branch": "master", "commit": "51f0eef4c47f4a677ce6272c103d4ac74acb3b8f" },
   "neogit": { "branch": "master", "commit": "29583c2bd0c4b552fbb16e93bf4f26febbe4a3c2" },
