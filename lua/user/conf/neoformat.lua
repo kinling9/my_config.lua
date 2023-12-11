@@ -29,3 +29,8 @@ vim.cmd [[
 vim.cmd [[
 	let g:neoformat_enabled_python = ['black']
 ]]
+
+vim.cmd [[
+  let g:neoformat_try_node_exe = 1
+	let g:neoformat_enabled_markdown = ['remark']
+]]
