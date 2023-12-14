@@ -1,4 +1,4 @@
-require('nvim_comment').setup()
+require("nvim_comment").setup()
 
 vim.cmd([[
 	augroup set-commentstring-ag
