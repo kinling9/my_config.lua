@@ -48,12 +48,6 @@ if vim.fn.has "wsl" == 1 then
   }
 end
 
-vim.lsp.start({
-   name = 'lsp-clangd',
-   cmd = {'clangd'},
-   -- root_dir = vim.fs.dirname(vim.fs.find({'configure'}, { upward = true })[1]),
-})
-
 require('lspconfig').clangd.setup{
   -- on_attach = lsphandler.on_attach,
   -- capabilities = lsphandler.capabilities,
@@ -62,4 +56,9 @@ require('lspconfig').clangd.setup{
     '--query-driver="/usr/bin/gcc, /usr/bin/g++"',
   },
   filetypes = { "c", "cpp", "h", "hpp"},
+}
+
+require'lspconfig'.remark_ls.setup{
+  cmd = { "remark-language-server", "--stdio" },
+  filetypes = {"markdown"},
 }

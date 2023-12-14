@@ -77,4 +77,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+if vim.fn.has "wsl" == 1 then
+  vim.api.nvim_create_autocmd(
+      'InsertLeave',
+      {
+        callback=function()
+          -- change to English after insert
+          vim.fn.jobstart('im-select.exe 1033')
+        end
+      }
+  )
+end
+
 -- map('n', '<leader>g', "<cmd>lua _lazygit_toggle()<CR>", opts)
