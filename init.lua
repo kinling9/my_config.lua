@@ -18,4 +18,5 @@ else
 	require("user.options")
 	require("user.keymaps")
 	require("user.confs")
+	require("user.lsps")
 end
