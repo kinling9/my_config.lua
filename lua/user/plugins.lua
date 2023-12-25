@@ -43,8 +43,8 @@ require("lazy").setup({
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-  {
-    "lervag/vimtex",
-    ft = {"tex", "bib"}
-  }
+	{
+		"lervag/vimtex",
+		ft = { "tex", "bib" },
+	},
 })
