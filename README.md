@@ -13,6 +13,7 @@ Neovim settings
 * fd **fuzzy find**
 * im-select.exe **using 1033(English) as default input**
 * win32yank.exe **clipboard support for wsl**
+* sioyek **pdf viewer for latex**
 
 ## code format
 
