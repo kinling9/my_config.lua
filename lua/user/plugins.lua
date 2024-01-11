@@ -33,7 +33,6 @@ require("lazy").setup({
 	-- vsnip
 	"hrsh7th/cmp-vsnip",
 	"hrsh7th/vim-vsnip",
-	"echasnovski/mini.nvim",
 	"keaising/im-select.nvim",
 	{
 		"iamcco/markdown-preview.nvim",
