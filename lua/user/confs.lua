@@ -8,7 +8,9 @@ require("user.confs.nvim_cmp")
 require("user.confs.gitsigns")
 require("user.confs.neogit")
 require("user.confs.nvim_treesitter")
-require("user.confs.im_select")
+if vim.fn.has("wsl") == 1 then
+  require("user.confs.im_select")
+end
 require("user.confs.vimtex")
 require("user.confs.nvim_toc")
 require("user.confs.copilot")
