@@ -43,4 +43,11 @@ require("lazy").setup({
 		end,
 	},
 	"lervag/vimtex",
+  "richardbizik/nvim-toc",
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+  },
+  "zbirenbaum/copilot-cmp",
 })
