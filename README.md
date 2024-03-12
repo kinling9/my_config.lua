@@ -9,24 +9,31 @@ Neovim settings
 
 ## requirements
 
-* ripgrep **fast grep**
-* fd **fuzzy find**
-* im-select.exe **using 1033(English) as default input**
-* win32yank.exe **clipboard support for wsl**
-* sioyek **pdf viewer for latex**
+- ripgrep **fast grep**
+- fd **fuzzy find**
+- deno **markdown format**
+- nodejs **markdown LSP**
+- remarker **markdown LSP**
+- TexLive **latex**
+- clangd **cpp LSP**
+- pyright **python LSP**
+- clang-format **cpp format**
+- im-select.exe **using 1033(English) as default input**
+- win32yank.exe **clipboard support for wsl**
+- sioyek **pdf viewer for latex**
 
 ## code format
 
-* clang-format google style **cpp format**
-* python + black **python format**
-* nodejs + remark **Markdown format**
-* cargo + stylua **Lua format**
+- clang-format google style **cpp format**
+- python + black **python format**
+- deno fmt **Markdown format**
+- cargo + stylua **Lua format**
 
 ## LSP
 
-* clangd **cpp LSP**
-* remark **markdown LSP**
-* pyright **python LSP**
+- clangd **cpp LSP**
+- remark **markdown LSP**
+- pyright **python LSP**
 
 ## Credits
 
