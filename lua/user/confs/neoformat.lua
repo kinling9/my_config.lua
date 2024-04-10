@@ -34,3 +34,21 @@ vim.cmd([[
 vim.g.neoformat_enabled_lua = { "stylua" }
 
 vim.g.neoformat_enabled_markdown = { "denofmt" }
+
+vim.cmd([[
+  let g:neoformat_bib_bibtextidysort = {
+		\ 'exe': 'bibtex-tidy',
+		\ 'args': ['--sort=type,-year,name', '--sort-fields', '--blank-lines'],
+		\ 'stdin': 1,
+	  \ }
+]])
+
+vim.g.neoformat_enabled_bib = { "bibtextidysort" }
+vim.cmd([[
+  let g:neoformat_tex_latexindentoverwrite = {
+    \ 'exe': 'latexindent',
+    \ 'stdin': 1,
+    \ }
+]])
+
+vim.g.neoformat_enabled_tex = { "latexindentoverwrite" }
