@@ -28,12 +28,15 @@ Neovim settings
 - python + black **python format**
 - deno fmt **Markdown format**
 - cargo + stylua **Lua format**
+- bibtex-tidy **Bib format**
+- latexindent **Latex format**
 
 ## LSP
 
 - clangd **cpp LSP**
 - remark **markdown LSP**
 - pyright **python LSP**
+- ltex **latex LSP**
 
 ## Credits
 
