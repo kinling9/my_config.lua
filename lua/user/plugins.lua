@@ -22,7 +22,7 @@ local default_config = {
 	"easymotion/vim-easymotion",
 	"akinsho/toggleterm.nvim",
 	"neovim/nvim-lspconfig",
-	"sbdchd/neoformat",
+	"kinling9/neoformat",
 	"lewis6991/gitsigns.nvim",
 	"NeogitOrg/neogit",
 	"hrsh7th/cmp-nvim-lsp",

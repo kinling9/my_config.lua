@@ -44,10 +44,11 @@ vim.cmd([[
 ]])
 
 vim.g.neoformat_enabled_bib = { "bibtextidysort" }
+vim.g.latexindent = "-m"
 vim.cmd([[
   let g:neoformat_tex_latexindentoverwrite = {
     \ 'exe': 'latexindent',
-    \ 'stdin': 1,
+    \ 'stdin': 0,
     \ }
 ]])
 
