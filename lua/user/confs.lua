@@ -17,3 +17,4 @@ end
 require("user.confs.vimtex")
 require("user.confs.nvim_toc")
 require("user.confs.copilot")
+require("user.confs.easymotion")
