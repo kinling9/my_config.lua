@@ -30,10 +30,10 @@ end
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 
-vim.cmd([[
-	syntax on
-	colorscheme onedark
-]])
+-- vim.cmd([[
+-- 	syntax on
+-- 	colorscheme onedark
+-- ]])
 
 if vim.fn.has("wsl") == 1 then
 	vim.g.clipboard = {

@@ -14,6 +14,8 @@ if vim.g.vscode then
 	end
 else
 	-- ordinary Neovim
+	vim.g.mapleader = " "
+	vim.g.maplocalleader = " "
 	require("user.plugins")
 	require("user.options")
 	require("user.keymaps")
