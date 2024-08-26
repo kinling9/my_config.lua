@@ -49,11 +49,23 @@ local default_config = {
 	"lervag/vimtex",
 	"richardbizik/nvim-toc",
 	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
+	},
+	{
 		"mfussenegger/nvim-dap",
-		dependencies = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio", "mfussenegger/nvim-dap-python" },
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+			"nvim-neotest/nvim-nio",
+			"mfussenegger/nvim-dap-python",
+			"julianolf/nvim-dap-lldb",
+		},
 		config = function()
 			local dap, dapui = require("dap"), require("dapui")
 			require("dap-python").setup("python")
+			require("dap-lldb").setup("cpp")
 			require("dapui").setup()
 			dap.listeners.before.attach.dapui_config = function()
 				dapui.open()
@@ -78,9 +90,10 @@ local default_config = {
 		event = "InsertEnter",
 	},
 	"zbirenbaum/copilot-cmp",
+	"keaising/im-select.nvim",
 }
 local wsl_config = {
-	"keaising/im-select.nvim",
+	-- "keaising/im-select.nvim",
 }
 if vim.fn.has("wsl") == 1 then
 	local total_config = default_config
