@@ -1,3 +1,3 @@
 require("nvim-toc").setup({
-	toc_header = "Table of Contents",
+  toc_header = "Table of Contents",
 })
