@@ -41,7 +41,7 @@ require("copilot").setup({
   copilot_node_command = "node", -- Node.js version must be > 18.x
   server_opts_overrides = {},
 })
-vim.g.copilot_proxy = "127.0.0.1:10809"
+vim.g.copilot_proxy = "127.0.0.1:1081"
 -- cmp.event:on("menu_opened", function()
 --   vim.b.copilot_suggestion_hidden = true
 -- end)
