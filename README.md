@@ -22,6 +22,8 @@ Neovim settings
 - win32yank.exe **clipboard support for wsl**
 - sioyek **pdf viewer for latex**
 
+- ENV PROXY_HOST for Copilot proxy
+
 ## code format
 
 - clang-format google style **cpp format**
