@@ -11,7 +11,7 @@ require("user.confs.nvim_treesitter")
 -- if vim.fn.has("wsl") == 1 then
 -- 	require("user.confs.im_select")
 -- end
-require("user.confs.im_select")
+-- require("user.confs.im_select")
 if vim.fn.has("wsl") == 0 then
   require("user.confs.markdown_preview")
 end
