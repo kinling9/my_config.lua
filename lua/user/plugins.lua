@@ -139,7 +139,7 @@ local default_config = {
           __inherited_from = "openai",
           api_key_name = "DASHSCOPE_API_KEY",
           endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
-          model = "qwen-max-latest",
+          model = "qwen2.5-coder-32b-instruct",
         },
       },
     },
