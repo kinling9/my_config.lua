@@ -169,6 +169,10 @@ local default_config = {
     },
     config = require("user.confs.codecompanion"),
   },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    config = require("user.confs.nvim-treesitter-textobjects"),
+  },
 }
 local wsl_config = {
   -- "keaising/im-select.nvim",

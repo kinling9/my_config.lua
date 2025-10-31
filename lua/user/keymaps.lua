@@ -77,6 +77,53 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+-- Treesitter textobjects keymaps
+-- Selection keymaps
+vim.keymap.set({ "x", "o" }, "af", function()
+  require("nvim-treesitter.textobjects.select").select_textobject("@function.outer")
+end, { desc = "Select around function" })
+
+vim.keymap.set({ "x", "o" }, "if", function()
+  require("nvim-treesitter.textobjects.select").select_textobject("@function.inner")
+end, { desc = "Select inside function" })
+
+vim.keymap.set({ "x", "o" }, "ac", function()
+  require("nvim-treesitter.textobjects.select").select_textobject("@class.outer")
+end, { desc = "Select around class" })
+
+vim.keymap.set({ "x", "o" }, "ic", function()
+  require("nvim-treesitter.textobjects.select").select_textobject("@class.inner")
+end, { desc = "Select inner part of a class region" })
+
+-- Movement keymaps
+vim.keymap.set("n", "]o", function()
+  require("nvim-treesitter.textobjects.move").goto_next_start("@loop.*")
+end, { desc = "Next loop" })
+
+vim.keymap.set("n", "]m", function()
+  require("nvim-treesitter.textobjects.move").goto_next_start("@function.outer")
+end, { desc = "Next function start" })
+
+vim.keymap.set("n", "[m", function()
+  require("nvim-treesitter.textobjects.move").goto_previous_start("@function.outer")
+end, { desc = "Previous function start" })
+
+vim.keymap.set("n", "]]", function()
+  require("nvim-treesitter.textobjects.move").goto_next_start("@class.outer")
+end, { desc = "Next class start" })
+
+vim.keymap.set("n", "][", function()
+  require("nvim-treesitter.textobjects.move").goto_next_end("@class.outer")
+end, { desc = "Next class end" })
+
+vim.keymap.set("n", "[[", function()
+  require("nvim-treesitter.textobjects.move").goto_previous_start("@class.outer")
+end, { desc = "Previous class start" })
+
+vim.keymap.set("n", "[]", function()
+  require("nvim-treesitter.textobjects.move").goto_previous_end("@class.outer")
+end, { desc = "Previous class end" })
+
 -- im-select manually setting
 if vim.fn.has("wsl") == 0 then
   vim.api.nvim_create_autocmd("InsertLeave", {
