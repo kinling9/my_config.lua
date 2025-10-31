@@ -12,15 +12,22 @@ Neovim settings
 - ripgrep **fast grep**
 - fd **fuzzy find**
 - deno **markdown format**
-- nodejs **markdown LSP**
+- nodejs **Copilot backend**
 - remarker **markdown LSP**
 - TexLive **latex**
 - clangd **cpp LSP**
 - pyright **python LSP**
 - clang-format **cpp format**
+
+### WSL
+
 - im-select.exe **using 1033(English) as default input**
 - win32yank.exe **clipboard support for wsl**
-- sioyek **pdf viewer for latex**
+
+### Linux
+
+- ibus **input method switch support**
+- okular **pdf viewer for latex**
 
 - ENV PROXY_HOST for Copilot proxy
 
@@ -39,6 +46,11 @@ Neovim settings
 - remark **markdown LSP**
 - pyright **python LSP**
 - ltex **latex LSP**
+
+## AI agent
+
+- zbirenbaum/copilot.lua to use GitHub Copilot
+- olimorris/codecompanion.nvim to use qwen3-coder-plus
 
 ## Credits
 
