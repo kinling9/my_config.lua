@@ -31,40 +31,7 @@ local default_config = {
   {
     "stevearc/conform.nvim",
     opts = {},
-    config = function()
-      -- require("conform").formatter.bibtextidy = {
-      -- 	prepend_args = { "--sort=type,-year,name", "--sort-fields", "--blank-lines" },
-      -- }
-      require("conform").setup({
-        formatters = {
-          bibtextidy = {
-            command = "bibtex-tidy",
-            stdin = true,
-            args = { "--sort=type,-year,name", "--sort-fields", "--blank-lines", "--quiet" },
-          },
-        },
-        formatters_by_ft = {
-          lua = { "stylua" },
-          -- Conform will run multiple formatters sequentially
-          python = { "black" },
-          c = { "clang-format" },
-          cpp = { "clang-format" },
-          markdown = { "deno_fmt" },
-          tex = { "latexindent" },
-          bib = { "bibtextidy" },
-          rust = { "rustfmt" },
-          toml = { "taplo" },
-          json = { "jq" },
-          ["*"] = { "trim_whitespace", "trim_newlines" },
-        },
-      })
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = "*",
-        callback = function(args)
-          require("conform").format({ bufnr = args.buf })
-        end,
-      })
-    end,
+    config = require("user.confs.conform"),
   },
   "lewis6991/gitsigns.nvim",
   "NeogitOrg/neogit",
@@ -100,26 +67,7 @@ local default_config = {
       "mfussenegger/nvim-dap-python",
       "julianolf/nvim-dap-lldb",
     },
-    config = function()
-      local dap, dapui = require("dap"), require("dapui")
-      require("dap-python").setup("python")
-      require("dap-lldb").setup("cpp")
-      require("dapui").setup()
-      dap.listeners.before.attach.dapui_config = function()
-        dapui.open()
-      end
-      dap.listeners.before.launch.dapui_config = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated.dapui_config = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited.dapui_config = function()
-        dapui.close()
-      end
-      vim.keymap.set("n", "<Leader>dt", dap.toggle_breakpoint, {})
-      vim.keymap.set("n", "<Leader>dc", dap.continue, {})
-    end,
+    config = require("user.confs.dap"),
   },
   -- { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
   {
@@ -137,55 +85,7 @@ local default_config = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
-    config = function()
-      require("codecompanion").setup({
-        adapters = {
-          http = {
-            qwencoder = function()
-              return require("codecompanion.adapters").extend("openai_compatible", {
-                name = "qwen",
-                formatted_name = "Qwen",
-                roles = {
-                  llm = "assistant",
-                  user = "user",
-                  system = "system",
-                },
-                opts = {
-                  stream = true,
-                },
-                features = {
-                  text = true,
-                  tokens = true,
-                  vision = false,
-                },
-                env = {
-                  url = "https://dashscope.aliyuncs.com/compatible-mode",
-                  chat_url = "/v1/chat/completions",
-                  api_key = "DASHSCOPE_API_KEY",
-                },
-                schema = {
-                  ---@type CodeCompanion.Schema
-                  model = {
-                    default = "qwen3-coder-plus",
-                  },
-                },
-              })
-            end,
-          },
-        },
-        strategies = {
-          agent = {
-            adapter = "qwencoder",
-          },
-          chat = {
-            adapter = "qwencoder",
-          },
-          inline = {
-            adapter = "qwencoder",
-          },
-        },
-      })
-    end,
+    config = require("user.confs.codecompanion"),
   },
 }
 local wsl_config = {
