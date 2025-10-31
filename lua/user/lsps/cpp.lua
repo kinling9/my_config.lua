@@ -1,6 +1,6 @@
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-require("lspconfig").clangd.setup({
+vim.lsp.config("clangd", {
   on_attach = on_attch,
   capabilities = cmp_nvim_lsp.default_capabilities(),
   cmd = {

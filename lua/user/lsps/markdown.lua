@@ -1,4 +1,4 @@
-require("lspconfig").remark_ls.setup({
+vim.lsp.config("remark_ls", {
   cmd = { "remark-language-server", "--stdio" },
   filetypes = { "markdown" },
 })
