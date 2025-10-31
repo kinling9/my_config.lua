@@ -53,6 +53,8 @@ local default_config = {
           tex = { "latexindent" },
           bib = { "bibtextidy" },
           rust = { "rustfmt" },
+          toml = { "taplo" },
+          json = { "jq" },
           ["*"] = { "trim_whitespace", "trim_newlines" },
         },
       })
@@ -163,7 +165,7 @@ local default_config = {
               schema = {
                 ---@type CodeCompanion.Schema
                 model = {
-                  default = "qwen-plus-latest",
+                  default = "qwen3-coder-plus",
                 },
               },
             })
