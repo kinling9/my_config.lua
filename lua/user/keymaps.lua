@@ -35,6 +35,9 @@ function _G.set_terminal_keymaps()
   vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
 end
 
+-- Open terminal mapping (moved from toggleterm setup)
+vim.keymap.set({ "n", "t" }, "<c-\\>", "<cmd>ToggleTerm<cr>", { noremap = true, silent = true })
+
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 

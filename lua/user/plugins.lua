@@ -17,15 +17,9 @@ vim.opt.rtp:prepend(lazypath)
 
 local default_config = {
   "navarasu/onedark.nvim",
-  "terrortylor/nvim-comment",
-  "nvim-tree/nvim-tree.lua",
-  "nvim-treesitter/nvim-treesitter",
   -- "airblade/vim-gitgutter",
   "nvim-lua/plenary.nvim",
   "nvim-telescope/telescope.nvim",
-  "windwp/nvim-autopairs",
-  "easymotion/vim-easymotion",
-  "akinsho/toggleterm.nvim",
   "neovim/nvim-lspconfig",
   -- "kinling9/neoformat",
   {
@@ -33,13 +27,10 @@ local default_config = {
     opts = {},
     config = require("user.confs.conform"),
   },
-  "lewis6991/gitsigns.nvim",
-  "NeogitOrg/neogit",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-buffer",
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-cmdline",
-  "hrsh7th/nvim-cmp",
   -- vsnip
   "hrsh7th/cmp-vsnip",
   "hrsh7th/vim-vsnip",
@@ -51,8 +42,6 @@ local default_config = {
       vim.fn["mkdp#util#install"]()
     end,
   },
-  "lervag/vimtex",
-  "richardbizik/nvim-toc",
   {
     "williamboman/mason.nvim",
     config = function()
@@ -71,13 +60,97 @@ local default_config = {
   },
   -- { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
   {
+    "keaising/im-select.nvim",
+    config = function()
+      require("user.confs.im_select")
+    end,
+  },
+  { "echasnovski/mini.nvim", version = false },
+  {
+    "nvim-tree/nvim-tree.lua",
+    config = function()
+      require("user.confs.nvim_tree")
+    end,
+  },
+  {
+    "terrortylor/nvim-comment",
+    config = function()
+      require("user.confs.nvim_comment")
+    end,
+  },
+  {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("user.confs.nvim_autopairs")
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("user.confs.nvim_treesitter")
+    end,
+  },
+  {
+    "akinsho/toggleterm.nvim",
+    config = function()
+      require("user.confs.toggleterm")
+    end,
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require("user.confs.nvim_cmp")
+    end,
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("user.confs.gitsigns")
+    end,
+  },
+  {
+    "NeogitOrg/neogit",
+    config = function()
+      require("user.confs.neogit")
+    end,
+  },
+  {
+    "easymotion/vim-easymotion",
+    config = function()
+      require("user.confs.easymotion")
+    end,
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    config = function()
+      require("user.confs.markdown_preview")
+    end,
+  },
+  {
+    "lervag/vimtex",
+    config = function()
+      require("user.confs.vimtex")
+    end,
+  },
+  {
+    "richardbizik/nvim-toc",
+    config = function()
+      require("user.confs.nvim_toc")
+    end,
+  },
+  {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
+    config = function()
+      require("user.confs.copilot")
+    end,
   },
-  "zbirenbaum/copilot-cmp",
-  "keaising/im-select.nvim",
-  { "echasnovski/mini.nvim", version = false },
   {
     "olimorris/codecompanion.nvim",
     opts = {},
