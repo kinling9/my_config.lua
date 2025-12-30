@@ -69,6 +69,7 @@ local default_config = {
   },
   -- { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
   {
+    -- "kinling9/im-select.nvim",
     "keaising/im-select.nvim",
     config = function()
       require("user.confs.im_select")
