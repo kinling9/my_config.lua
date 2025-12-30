@@ -1,8 +1,17 @@
 return function()
   require("codecompanion").setup({
     adapters = {
+      acp = {
+        gemini_cli = function()
+          return require("codecompanion.adapters").extend("gemini_cli", {
+            defaults = {
+              auth_method = "oauth-personal", -- "oauth-personal"|"gemini-api-key"|"vertex-ai"
+            },
+          })
+        end,
+      },
       http = {
-        qwencoder = function()
+        myqwencoder = function()
           return require("codecompanion.adapters").extend("openai_compatible", {
             name = "qwen",
             formatted_name = "Qwen",
@@ -32,7 +41,7 @@ return function()
             },
           })
         end,
-        qwenplus = function()
+        myqwenplus = function()
           return require("codecompanion.adapters").extend("openai_compatible", {
             name = "qwen",
             formatted_name = "Qwen",
@@ -64,15 +73,20 @@ return function()
         end,
       },
     },
-    strategies = {
-      agent = {
-        adapter = "qwencoder",
-      },
+    -- strategies = {
+    --   agent = {
+    --     adapter = "qwencoder",
+    --   },
+    --   chat = {
+    --     adapter = "qwencoder",
+    --   },
+    --   inline = {
+    --     adapter = "qwencoder",
+    --   },
+    -- },
+    interactions = {
       chat = {
-        adapter = "qwencoder",
-      },
-      inline = {
-        adapter = "qwencoder",
+        adapter = "gemini_cli",
       },
     },
   })
