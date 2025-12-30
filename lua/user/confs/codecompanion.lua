@@ -89,5 +89,10 @@ return function()
         adapter = "gemini_cli",
       },
     },
+    display = {
+      action_palette = {
+        provider = "mini_pick",
+      },
+    },
   })
 end

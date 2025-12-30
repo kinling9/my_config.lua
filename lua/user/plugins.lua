@@ -77,6 +77,13 @@ local default_config = {
   },
   { "echasnovski/mini.nvim", version = false },
   {
+    "nvim-mini/mini.pick",
+    version = false,
+    config = function()
+      require("mini.pick").setup()
+    end,
+  },
+  {
     "nvim-tree/nvim-tree.lua",
     config = function()
       require("user.confs.nvim_tree")
