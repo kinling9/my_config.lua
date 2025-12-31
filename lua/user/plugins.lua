@@ -181,6 +181,14 @@ local default_config = {
     "nvim-treesitter/nvim-treesitter-textobjects",
     config = require("user.confs.nvim-treesitter-textobjects"),
   },
+  {
+    "gutsavgupta/nvim-gemini-companion",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "VeryLazy",
+    config = function()
+      require("user.confs.gemini")
+    end,
+  },
 }
 local wsl_config = {
   -- "keaising/im-select.nvim",

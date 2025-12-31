@@ -141,3 +141,8 @@ vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, si
 
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd([[cab cc CodeCompanion]])
+
+-- Gemini keymaps
+vim.keymap.set("n", "<leader>gg", "<cmd>GeminiToggle<cr>", { desc = "Toggle Gemini sidebar" })
+vim.keymap.set("n", "<leader>gc", "<cmd>GeminiSwitchToCli<cr>", { desc = "Spawn or switch to AI session" })
+vim.keymap.set("x", "<leader>gs", "<cmd>GeminiSend<cr>", { desc = "Send selection to Gemini" })
