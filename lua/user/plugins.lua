@@ -96,6 +96,8 @@ local default_config = {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ":TSUpdate",
     config = function()
       require("user.confs.nvim_treesitter")
     end,
@@ -172,15 +174,29 @@ local default_config = {
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    config = require("user.confs.nvim-treesitter-textobjects"),
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("user.confs.nvim-treesitter-textobjects")()
+    end,
   },
 }
 local wsl_config = {
   -- "keaising/im-select.nvim",
 }
+local mac_config = {}
+
 if vim.fn.has("wsl") == 1 then
   local total_config = default_config
   for _, v in ipairs(wsl_config) do
+    table.insert(total_config, v)
+  end
+
+  require("lazy").setup(total_config)
+elseif vim.fn.has("macunix") == 1 then
+  local total_config = default_config
+  for _, v in ipairs(mac_config) do
     table.insert(total_config, v)
   end
 
