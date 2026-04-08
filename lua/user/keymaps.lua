@@ -80,56 +80,63 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- Treesitter textobjects keymaps
 -- Selection keymaps
 vim.keymap.set({ "x", "o" }, "af", function()
-  require("nvim-treesitter.textobjects.select").select_textobject("@function.outer")
+  require("nvim-treesitter-textobjects.select").select_textobject("@function.outer", "textobjects")
 end, { desc = "Select around function" })
 
 vim.keymap.set({ "x", "o" }, "if", function()
-  require("nvim-treesitter.textobjects.select").select_textobject("@function.inner")
+  require("nvim-treesitter-textobjects.select").select_textobject("@function.inner", "textobjects")
 end, { desc = "Select inside function" })
 
 vim.keymap.set({ "x", "o" }, "ac", function()
-  require("nvim-treesitter.textobjects.select").select_textobject("@class.outer")
+  require("nvim-treesitter-textobjects.select").select_textobject("@class.outer", "textobjects")
 end, { desc = "Select around class" })
 
 vim.keymap.set({ "x", "o" }, "ic", function()
-  require("nvim-treesitter.textobjects.select").select_textobject("@class.inner")
+  require("nvim-treesitter-textobjects.select").select_textobject("@class.inner", "textobjects")
 end, { desc = "Select inner part of a class region" })
 
 -- Movement keymaps
 vim.keymap.set("n", "]o", function()
-  require("nvim-treesitter.textobjects.move").goto_next_start("@loop.*")
+  require("nvim-treesitter-textobjects.move").goto_next_start({ "@loop.inner", "@loop.outer" }, "textobjects")
 end, { desc = "Next loop" })
 
 vim.keymap.set("n", "]m", function()
-  require("nvim-treesitter.textobjects.move").goto_next_start("@function.outer")
+  require("nvim-treesitter-textobjects.move").goto_next_start("@function.outer", "textobjects")
 end, { desc = "Next function start" })
 
 vim.keymap.set("n", "[m", function()
-  require("nvim-treesitter.textobjects.move").goto_previous_start("@function.outer")
+  require("nvim-treesitter-textobjects.move").goto_previous_start("@function.outer", "textobjects")
 end, { desc = "Previous function start" })
 
 vim.keymap.set("n", "]]", function()
-  require("nvim-treesitter.textobjects.move").goto_next_start("@class.outer")
+  require("nvim-treesitter-textobjects.move").goto_next_start("@class.outer", "textobjects")
 end, { desc = "Next class start" })
 
 vim.keymap.set("n", "][", function()
-  require("nvim-treesitter.textobjects.move").goto_next_end("@class.outer")
+  require("nvim-treesitter-textobjects.move").goto_next_end("@class.outer", "textobjects")
 end, { desc = "Next class end" })
 
 vim.keymap.set("n", "[[", function()
-  require("nvim-treesitter.textobjects.move").goto_previous_start("@class.outer")
+  require("nvim-treesitter-textobjects.move").goto_previous_start("@class.outer", "textobjects")
 end, { desc = "Previous class start" })
 
 vim.keymap.set("n", "[]", function()
-  require("nvim-treesitter.textobjects.move").goto_previous_end("@class.outer")
+  require("nvim-treesitter-textobjects.move").goto_previous_end("@class.outer", "textobjects")
 end, { desc = "Previous class end" })
 
 -- im-select manually setting
-if vim.fn.has("wsl") == 0 then
+local normal_mode_im_cmd = nil
+if vim.fn.has("macunix") == 1 then
+  normal_mode_im_cmd = { "im-select", "com.apple.keylayout.ABC" }
+elseif vim.fn.has("wsl") == 0 then
+  normal_mode_im_cmd = { "ibus", "engine", "xkb:us::eng" }
+end
+
+if normal_mode_im_cmd ~= nil then
   vim.api.nvim_create_autocmd("InsertLeave", {
     callback = function()
       -- change to English after insert
-      vim.fn.jobstart("ibus engine xkb:us::eng")
+      vim.fn.jobstart(normal_mode_im_cmd)
     end,
   })
 end

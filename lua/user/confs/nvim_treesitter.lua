@@ -1,20 +1,22 @@
-require("nvim-treesitter.configs").setup({
-  highlight = {
-    enable = true,
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    disable = { "latex" },
-    additional_vim_regex_highlighting = { "latex" },
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "<CR>", -- set to `false` to disable one of the mappings
-      scope_incremental = "<CR>",
-      node_incremental = "<TAB>",
-      node_decremental = "<S-TAB>",
-    },
-  },
+local ok, ts = pcall(require, "nvim-treesitter")
+if not ok then
+  vim.schedule(function()
+    vim.notify("nvim-treesitter is not available", vim.log.levels.WARN)
+  end)
+  return
+end
+
+ts.setup({})
+
+local ts_group = vim.api.nvim_create_augroup("UserTreesitter", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = ts_group,
+  callback = function(args)
+    if vim.bo[args.buf].filetype == "latex" then
+      return
+    end
+
+    pcall(vim.treesitter.start, args.buf)
+  end,
 })
