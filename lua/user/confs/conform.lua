@@ -9,11 +9,23 @@ return function()
         stdin = true,
         args = { "--sort=type,-year,name", "--sort-fields", "--blank-lines", "--quiet" },
       },
+      ruff_organize_imports = {
+        command = "ruff",
+        args = {
+          "check",
+          "--force-exclude",
+          "--select=I", -- Select only the "Isort" rule
+          "--fix",
+          "--stdin-filename",
+          "$FILENAME",
+          "-",
+        },
+      },
     },
     formatters_by_ft = {
       lua = { "stylua" },
       -- Conform will run multiple formatters sequentially
-      python = { "black" },
+      python = { "ruff_organize_imports", "black" },
       c = { "clang-format" },
       cpp = { "clang-format" },
       markdown = { "deno_fmt" },

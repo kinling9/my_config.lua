@@ -85,8 +85,17 @@ return function()
     --   },
     -- },
     interactions = {
+      -- chat = {
+      --   adapter = "gemini_cli",
+      -- },
+      agent = {
+        adapter = "myqwencoder",
+      },
       chat = {
-        adapter = "gemini_cli",
+        adapter = "myqwencoder",
+      },
+      inline = {
+        adapter = "myqwencoder",
       },
     },
     display = {
